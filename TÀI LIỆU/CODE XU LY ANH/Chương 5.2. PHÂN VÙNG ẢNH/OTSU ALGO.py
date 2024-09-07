@@ -1,4 +1,4 @@
-input()
+
 n, N = int(input()), -1  
 a, cnt = [], [0] * 256 
 for _ in range(n):
@@ -25,8 +25,8 @@ res = -1  # Phương sai tối đa ban đầu
 for i in range(0, N + 1):
     if P[i] == 0 or P[i] == 1: continue
     tu = mG * P[i] - m[i]  
-    mau = P[i] * (1 - P[i])  
-    if tu * tu / mau > res:  #Phương sai
-        res = tu * tu / mau  
+    mau = P[i] * (1 - P[i]) 
+    if round(tu * tu / mau, 2) > res:  
+        res = round(tu * tu / mau, 2)
         threshold = i  
 print(f"Otsu threshold = {threshold}")
